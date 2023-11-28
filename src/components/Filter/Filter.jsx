@@ -8,12 +8,12 @@ import { changeFilter } from 'redux/filterSlice';
 
 const filterInputId = nanoid();
 
-// Компонент фильтрации контактов
+ 
 const Filter = () => {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
 
-  // Обработчик изменения значения фильтра
+   
   const onChange = event => {
     const normalizedValue = event.target.value.toLowerCase();
 

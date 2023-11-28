@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
 
-// Генерация уникальных идентификаторов для полей формы.
+ 
 const nameInputId = nanoid();
 const numberInputId = nanoid();
 
@@ -26,19 +26,19 @@ const ContactForm = () => {
       contact => contact.name.toLowerCase().trim() === name.toLowerCase().trim()
     );
 
-    // Проверяет, существует ли контакт с таким же именем в списке контактов. Если контакт уже существует, выводится предупреждение.
+     
     if (isInContacts) {
       alert(`${name} is already in contacts`);
       return;
     }
 
-    // Вызов функции onSubmit из родительского компонента с передачей объекта контакта.
+  
     dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };
 
-  // Обработка изменения значений полей формы.
+   
   const handleChange = event => {
     const { name, value } = event.target;
 
